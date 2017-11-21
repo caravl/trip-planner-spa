@@ -1,2 +1,6 @@
-const sequelize = require('sequelize');
-const db = new sequelize('postgres://localhost:5432/tripplanner');
+const Sequelize = require('sequelize');
+const db = new Sequelize('postgres://localhost:5432/tripplanner');
+
+module.exports = {
+  db: db
+}
