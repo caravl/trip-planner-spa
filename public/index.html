@@ -30,7 +30,11 @@
                   var ourHotels = result.hotels
 
                   ourHotels.forEach(function (hotel) {
-                   selectForm.append(document.createElement("option"))
+
+                    let option = document.createElement("option");
+                    selectForm.append(option);
+                    option.innerHTML = hotel.name;
+                  //  selectForm.append(document.createElement("option")).innerHTML = "Hello";
                     // selectForm.append(document.createElement("option").setAttribute("value", hotel.name))
 
                   })
