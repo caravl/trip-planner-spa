@@ -23,10 +23,20 @@
             <option>
               <script>
                 fetch('/api')
-                  .then(results => {
-                    var child = document.getElementById('hotels-choices').childNodes[1]
-                    child.append("from browser")
+                .then(resStream => resStream.json())
+                .then(result => {
+                  var selectForm = document.getElementById('hotels-choices')
+                  console.log(selectForm)
+                  var ourHotels = result.hotels
+
+                  ourHotels.forEach(function (hotel) {
+                   selectForm.append(document.createElement("option"))
+                    // selectForm.append(document.createElement("option").setAttribute("value", hotel.name))
+
                   })
+                  // child.append(result.hotels)
+                })
+
               </script>
               </option>
           </select>

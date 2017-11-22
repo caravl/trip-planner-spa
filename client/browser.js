@@ -1,5 +1,7 @@
 fetch('/api')
-.then(results => {
+.then(resStream => resStream.json())
+.then(result => {
   var child = document.getElementById('hotels-choices').childNodes[1]
-  child.append("from browser")
+  child.append(result.hotels)
 })
+
